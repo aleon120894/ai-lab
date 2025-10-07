@@ -1,6 +1,6 @@
 # 🚀 AI Demo Project (C++)
 
-This project demonstrates a simple **Linear Regression** implemented from scratch in C++ using **Gradient Descent**.  
+This project demonstrates a simple **Linear Regression** and **Multi Linear Regression** implemented from scratch in C++ using **Gradient Descent**.  
 It is intended as an educational project for understanding the basics of AI/ML without external frameworks.
 
 ---
@@ -10,10 +10,11 @@ It is intended as an educational project for understanding the basics of AI/ML w
 ```plaintext
 ai-cpp-demo/
 ├── src/
-│   └── main.cpp        # Main program with linear regression implementation
-├── CMakeLists.txt      # Build configuration
-├── README.md           # Documentation
-└── .gitignore          # Ignored files
+│   └── main.cpp                           # Main program with linear regression implementation
+    └── multi_linear_regression.cpp        # Program with multi linear regression implementation
+├── CMakeLists.txt                         # Build configuration
+├── README.md                              # Documentation
+└── .gitignore                             # Ignored files
 
 
 ---
@@ -22,8 +23,8 @@ ai-cpp-demo/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/<your-username>/ai-cpp-demo.git
-cd ai-cpp-demo
+git clone https://github.com/aleon120894/ai-lab.git
+cd ai-lab
 ```
 
 Make sure you have CMake and a C++17-compatible compiler installed:
