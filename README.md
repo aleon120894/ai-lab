@@ -1,6 +1,6 @@
 # 🚀 AI Demo Project (C++)
 
-This project demonstrates a simple **Linear Regression** and **Multi Linear Regression** implemented from scratch in C++ using **Gradient Descent**.  
+This project demonstrates core Machine Learning algorithms, including **Linear Regression**, **Multi Linear Regression** (both implemented via **Gradient Descent**), and **K-Means Clustering** (an unsupervised iterative algorithm), all built from scratch in C++.
 It is intended as an educational project for understanding the basics of AI/ML without external frameworks.
 
 ---
@@ -8,13 +8,15 @@ It is intended as an educational project for understanding the basics of AI/ML w
 ## 📂 Project Structure
 
 ```plaintext
-ai-cpp-demo/
+ai-lab/
 ├── src/
-│   └── main.cpp                           # Main program with linear regression implementation
-    └── multi_linear_regression.cpp        # Program with multi linear regression implementation
-├── CMakeLists.txt                         # Build configuration
-├── README.md                              # Documentation
-└── .gitignore                             # Ignored files
+│   ├── main.cpp                        # Main program and demo runner
+│   ├── data_types.h                    # Common structures (e.g., DataPoint)
+│   ├── k_means_clusterer.h             # K-Means Clusterer class definition
+│   ├── k_means_clusterer.cpp           # K-Means core implementation
+│   └── multi_linear_regression.cpp     # Multi Linear Regression implementation (Original)
+├── CMakeLists.txt                      # Build configuration
+└── README.md                           # Documentation
 
 
 ---
@@ -59,25 +61,25 @@ Prediction for x=55: ~225
 
 📓 Notes
 
-The model is a simple Linear Regression (y = wx + b)
+This project implements fundamental ML algorithms:
 
-Optimization uses Gradient Descent with Mean Squared Error
+Linear Regression: Uses Gradient Descent with Mean Squared Error.
 
-Dataset is small and hardcoded inside main.cpp
+K-Means: Uses Euclidean distance for assignment and mean calculation for centroid update.
 
-Extendable for bigger datasets and file input
+Datasets are currently small and hardcoded inside main.cpp.
+
+The project is extendable for bigger datasets and file input.
+
 
 🔮 Optional Extensions
 
 ✅ Add file-based dataset loading (CSV parser)
-
 ✅ Implement Logistic Regression
-
 ✅ Use Eigen library for matrix/vector math
-
 ✅ Wrap into a small C++ API for inference
-
 ✅ Add CI/CD with GitHub Actions to test compilation
+
 
 📜 License
 
