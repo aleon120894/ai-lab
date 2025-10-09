@@ -81,6 +81,7 @@ void KMeansClusterer::assign_clusters(std::vector<DataPoint>& data) {
  * @return true if centroids moved (indicating non-convergence), false otherwise.
  */
 bool KMeansClusterer::update_centroids(const std::vector<DataPoint>& data) {
+
     // Stores the sum of feature vectors and the count of points for each cluster
     std::vector<std::vector<double>> new_centroids_sum(K, std::vector<double>(centroids[0].size(), 0.0));
     std::vector<int> cluster_counts(K, 0);
@@ -88,7 +89,9 @@ bool KMeansClusterer::update_centroids(const std::vector<DataPoint>& data) {
     // 1. Sum up all features for points in each cluster
     for (const auto& point : data) {
         int id = point.cluster_id;
+
         if (id >= 0 && id < K) {
+            
             cluster_counts[id]++;
             for (size_t i = 0; i < point.features.size(); ++i) {
                 new_centroids_sum[id][i] += point.features[i];

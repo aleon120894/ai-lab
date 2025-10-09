@@ -10,6 +10,7 @@
 // Compute model prediction
 double predict(const std::vector<double>& features, const std::vector<double>& weights,
                double bias) {
+                
     double result = bias;
     for(size_t i = 0; i < weights.size(); ++i) {
         result += weights[i] * features[i];
