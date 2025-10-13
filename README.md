@@ -1,6 +1,6 @@
 # 🚀 AI Demo Project (C++)
 
-This project demonstrates core Machine Learning algorithms, including **Linear Regression**, **Multi Linear Regression** (both implemented via **Gradient Descent**), and **K-Means Clustering** (an unsupervised iterative algorithm), all built from scratch in C++.
+This project demonstrates core Machine Learning algorithms, including **Linear Regression**, **Multi Linear Regression** (both implemented via **Gradient Descent**), and **K-Means Clustering** (an unsupervised iterative algorithm), **Logistic regression** all built from scratch in C++.
 It is intended as an educational project for understanding the basics of AI/ML without external frameworks.
 
 ---
@@ -15,6 +15,7 @@ ai-lab/
 │   ├── k_means_clusterer.h             # K-Means Clusterer class definition
 │   ├── k_means_clusterer.cpp           # K-Means core implementation
 │   └── multi_linear_regression.cpp     # Multi Linear Regression implementation (Original)
+    └── logistic_regression.cpp         # Logistic regression implementation
 ├── CMakeLists.txt                      # Build configuration
 └── README.md                           # Documentation
 
