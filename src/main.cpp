@@ -2,6 +2,8 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include "csv_parser.h"
+#include "data_preprocessor.h"
 
 
 // Include the new K-Means components
@@ -70,6 +72,7 @@ int main() {
     
     // 2. Run the new K-Means Clustering demo
     run_k_means_demo();
+    // run_logistic_regression_demo();
 
     return 0;
 }
@@ -85,4 +88,10 @@ void run_linear_regression_demo() {
     std::cout << "Epoch 200 | Loss: 310.5 | w: 4.98 b: -50.0" << std::endl;
     std::cout << "Prediction for x=55: ~225" << std::endl;
     std::cout << "-------------------------------------------------------" << std::endl;
+}
+
+void run_logistic_regression_demo() {
+    std::cout << "=======================================================" << std::endl;
+    std::cout << "      DEMO: LOGISTIC REGRESSION                        " << std::endl;
+    std::cout << "=======================================================" << std::endl;
 }
