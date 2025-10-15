@@ -36,7 +36,7 @@ void run_k_means_demo() {
         {{9.5, 8.8}}
     };
 
-    // 2. Initialize and Train the K-Means Clusterer
+    // 2. Initialize and Train the K-Means Clustere
     const int K = 3;
     const int MAX_ITERS = 100;
     KMeansClusterer clusterer(K, MAX_ITERS);
