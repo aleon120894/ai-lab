@@ -1,5 +1,6 @@
 # Other
 .vscode/
+
 # CMake build
 /build/
 CMakeCache.txt
@@ -11,3 +12,4 @@ CMakeFiles/
 *.o
 
 # Data
+data/

@@ -3,6 +3,7 @@
 #include <sstream>
 #include <iostream>
 
+
 std::vector<std::vector<std::string>> CSVParser::readCSV(const std::string& filename, char delimiter) {
     
     std::vector<std::vector<std::string>> output;
