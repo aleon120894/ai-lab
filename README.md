@@ -13,11 +13,14 @@ ai-lab/
 │   ├── main.cpp                        # Main program and demo runner
 │   ├── k_means_clusterer.cpp           # K-Means core implementation
 │   └── multi_linear_regression.cpp     # Multi Linear Regression implementation (Original)
-    └── logistic_regression.cpp         # Logistic regression implementation
+|   └── logistic_regression.cpp         # Logistic regression implementation
+|   ├── csv_parser.cpp
 ├── include/
-    ├── data_types.h                    # Common structures (e.g., DataPoint)
-    ├── k_means_clusterer.h             # K-Means Clusterer class definition
-    ├── logistic_regression.h           # Logistic Regression class definition
+|   ├── data_types.h                    # Common structures (e.g., DataPoint)
+|   ├── k_means_clusterer.h             # K-Means Clusterer class definition
+|   ├── logistic_regression.h           # Logistic Regression class definition
+|   ├── csv_parser.h
+|   ├── data_types.h                    # File with types of data
 ├── CMakeLists.txt                      # Build configuration
 └── README.md                           # Documentation
 

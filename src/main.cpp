@@ -67,13 +67,9 @@ void run_k_means_demo() {
 
 
 int main() {
-    // 1. Run the existing Linear Regression demo
-    // run_linear_regression_demo(); 
     
-    // 2. Run the new K-Means Clustering demo
+    // 1. Run the new K-Means Clustering demo
     run_k_means_demo();
-    // run_logistic_regression_demo();
-
     return 0;
 }
 
