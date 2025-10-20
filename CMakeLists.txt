@@ -15,7 +15,7 @@ set(ML_SOURCE_FILES
     src/logistic_regression.cpp  # <--- Component implementation
     src/csv_parser.cpp           # <--- Component implementation
     src/data_preprocessor.cpp    # <--- Component implementation
-   #  src/multi_linear_regression.cpp # <--- Component implementation
+    src/multi_linear_regression.cpp # <--- Component implementation
     # Add any other core .cpp files here
 )
 
