@@ -65,21 +65,24 @@ void run_k_means_demo() {
     }
 }
 
-
-int main() {
-    
-    // 1. Run the new K-Means Clustering demo
-    run_k_means_demo();
-    return 0;
-}
-
-
 // Mock implementation for the original project's demo
 void run_linear_regression_demo() {
     std::cout << "=======================================================" << std::endl;
     std::cout << "      DEMO: LINEAR REGRESSION (GRADIENT DESCENT)       " << std::endl;
     std::cout << "=======================================================" << std::endl;
     // NOTE: Replace this with your actual Linear Regression logic from the original main.cpp
+    
+    // 1. Define the file path (relative to the executable)
+    const std::string DATA_FILE = "../data/linear_data.csv";
+
+    // 2. Instantiate the parser and load the data
+    CSVParser parser;
+    std::vector<std::vector<std::string>> data = parser.readCSV(DATA_FILE);
+
+    if (data.empty()) {
+        std::cerr << "Error: Could not load data from " << DATA_FILE << ". Check file path and format." << std::endl;
+    }
+
     std::cout << "Running existing Linear Regression model..." << std::endl;
     std::cout << "Epoch 200 | Loss: 310.5 | w: 4.98 b: -50.0" << std::endl;
     std::cout << "Prediction for x=55: ~225" << std::endl;
@@ -90,4 +93,11 @@ void run_logistic_regression_demo() {
     std::cout << "=======================================================" << std::endl;
     std::cout << "      DEMO: LOGISTIC REGRESSION                        " << std::endl;
     std::cout << "=======================================================" << std::endl;
+}
+
+int main() {
+    
+    // 1. Run the new K-Means Clustering demo
+    run_k_means_demo();
+    return 0;
 }

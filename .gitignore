@@ -13,3 +13,6 @@ CMakeFiles/
 
 # Data
 data/
+
+# Visual Studio
+.vscode/

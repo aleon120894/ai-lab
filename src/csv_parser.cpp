@@ -8,6 +8,7 @@ std::vector<std::vector<std::string>> CSVParser::readCSV(const std::string& file
     
     std::vector<std::vector<std::string>> output;
     std::ifstream file(filename);
+
     if (!file.is_open()) {
         std::cerr << "Could not open file: " << filename << "\n";
         return output;
@@ -15,6 +16,7 @@ std::vector<std::vector<std::string>> CSVParser::readCSV(const std::string& file
 
     std::string line;
     while (std::getline(file, line)) {
+        
         std::vector<std::string> row;
         std::stringstream ss(line);
         std::string cell;

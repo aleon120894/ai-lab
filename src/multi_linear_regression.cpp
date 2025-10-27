@@ -63,14 +63,16 @@ int main() {
         {4, 5},
         {5, 6}
     };
-    std::vector<double> y = {13, 18, 23, 28, 33};
 
+    std::vector<double> y = {13, 18, 23, 28, 33};
     std::vector<double> weights = {0.0, 0.0};
+
     double bias = 0.0;
     double learning_rate = 0.01;
     int epochs = 5000;
 
     for(int epoch = 0; epoch <= epochs; ++epoch) {
+        
         update_weights(X, y, weights, bias, learning_rate);
 
         if(epoch % 500 == 0) {

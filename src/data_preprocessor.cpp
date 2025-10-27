@@ -14,12 +14,14 @@ void DataPreprocessor::toNumeric(const std::vector<std::vector<std::string>>& ra
 
     // Skip header (row 0)
     for (int i = 1; i < n; ++i) {
+
         std::vector<double> row;
         for (int j = 0; j < m; ++j) {
             if (j == label_col_index) continue;
             double val = std::stod(raw[i][j]);
             row.push_back(val);
         }
+        
         features.push_back(row);
         double label = std::stod(raw[i][label_col_index]);
         labels.push_back(label);
@@ -27,6 +29,7 @@ void DataPreprocessor::toNumeric(const std::vector<std::vector<std::string>>& ra
 }
 
 void DataPreprocessor::normalize(std::vector<std::vector<double>>& features) {
+
     if (features.empty()) return;
 
     int n = features.size();
