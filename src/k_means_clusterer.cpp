@@ -30,6 +30,7 @@ double KMeansClusterer::euclidean_distance(const std::vector<double>& p1, const 
  * @brief Initializes centroids by randomly selecting K data points from the dataset.
  */
  void KMeansClusterer::initialize_centroids(const std::vector<DataPoint>& data) {
+    
     if (data.empty()) return;
     
     // Use a random number generator
@@ -60,6 +61,7 @@ double KMeansClusterer::euclidean_distance(const std::vector<double>& p1, const 
  * @brief Assignment step: Assigns each data point to the closest centroid.
  */
 void KMeansClusterer::assign_clusters(std::vector<DataPoint>& data) {
+
     for (auto& point : data) {
         double min_dist = std::numeric_limits<double>::max();
         int best_cluster_id = -1;

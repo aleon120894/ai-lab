@@ -105,18 +105,22 @@ void LogisticRegression::train(std::vector<DataPoint>& data) {
 }
 
 double LogisticRegression::predict_proba(const std::vector<double>& features) const {
+
     if (features.size() != num_features_) {
         throw std::runtime_error("Prediction failed: Feature count mismatch.");
     }
 
     double z = bias_;
+
     for (size_t i = 0; i < num_features_; ++i) {
         z += features[i] * weights_[i];
     }
+
     return sigmoid(z);
 }
 
 int LogisticRegression::predict(const std::vector<double>& features) const {
+    
     double probability = predict_proba(features);
     // Simple thresholding: if probability >= 0.5, predict 1, otherwise 0.
     return (probability >= 0.5) ? 1 : 0; 
