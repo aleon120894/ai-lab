@@ -2,13 +2,13 @@
 #include <vector>
 #include <string>
 #include <algorithm>
-#include "csv_parser.h"
-#include "data_preprocessor.h"
+#include "data/preprocessing/csv_parser.h"
+#include "data/preprocessing/data_preprocessor.h"
 
 
 // Include the new K-Means components
-#include "data_types.h"
-#include "k_means_clusterer.h"
+#include "core/data_types.h"
+#include "models/clustering/k_means_clusterer.h"
 
 
 // Forward declaration for a simple Linear Regression demo (keeping the original structure)
