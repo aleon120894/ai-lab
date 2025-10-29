@@ -8,21 +8,27 @@ It is intended as an educational project for understanding the basics of AI/ML w
 ## 📂 Project Structure
 
 ```plaintext
-ai-lab/
-├── src/
-│   ├── main.cpp                        # Main program and demo runner
-│   ├── k_means_clusterer.cpp           # K-Means core implementation
-│   └── multi_linear_regression.cpp     # Multi Linear Regression implementation (Original)
-|   └── logistic_regression.cpp         # Logistic regression implementation
-|   ├── csv_parser.cpp
-├── include/
-|   ├── data_types.h                    # Common structures (e.g., DataPoint)
-|   ├── k_means_clusterer.h             # K-Means Clusterer class definition
-|   ├── logistic_regression.h           # Logistic Regression class definition
-|   ├── csv_parser.h
-|   ├── data_types.h                    # File with types of data
-├── CMakeLists.txt                      # Build configuration
-└── README.md                           # Documentation
+├── app
+│   └── main.cpp
+├── CMakeLists.txt
+├── core
+│   └── data_types.h
+├── data
+│   └── preprocessing
+│       ├── csv_parser.cpp
+│       ├── csv_parser.h
+│       ├── data_preprocessor.cpp
+│       └── data_preprocessor.h
+├── models
+│   ├── clustering
+│   │   ├── k_means_clusterer.cpp
+│   │   └── k_means_clusterer.h
+│   └── linear
+│       ├── logistic_regression.cpp
+│       ├── logistic_regression.h
+│       └── multi_linear_regression.cpp
+└── README.md
+                       # Documentation
 
 
 ---

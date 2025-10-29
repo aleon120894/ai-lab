@@ -1,7 +1,7 @@
 #ifndef AI_LAB_LOGISTIC_REGRESSION_H
 #define AI_LAB_LOGISTIC_REGRESSION_H
 
-#include "data_types.h"
+#include "core/data_types.h"
 #include <vector>
 #include <cmath>
 

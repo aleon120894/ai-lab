@@ -1,7 +1,7 @@
 #ifndef AI_LAB_K_MEANS_CLUSTERER_H
 #define AI_LAB_K_MEANS_CLUSTERER_H
 
-#include "data_types.h"
+#include "core/data_types.h"
 #include <vector>
 #include <cmath>
 #include <numeric>
