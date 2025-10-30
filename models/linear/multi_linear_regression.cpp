@@ -1,95 +1,55 @@
-#include <iostream>
-#include <vector>
+#include "multi_linear_regression.h"
 #include <cmath>
-#include <iomanip>
+#include <iostream>
 
+MultiLinearRegression::MultiLinearRegression(double learning_rate)
+    : learning_rate_(learning_rate), bias_(0.0) {}
 
-// -------- Multiple Linear Regression from scratch -------- //
-// y = w1*x1 + w2*x2 + ... + b
-
-// Compute model prediction
-double predict(const std::vector<double>& features, const std::vector<double>& weights,
-               double bias) {
-                
-    double result = bias;
-    for(size_t i = 0; i < weights.size(); ++i) {
-        result += weights[i] * features[i];
-    }
-    return result;
+double MultiLinearRegression::predict(const std::vector<double>& features) const {
+    double r = bias_;
+    for (size_t i = 0; i < weights_.size(); i++)
+        r += weights_[i] * features[i];
+    return r;
 }
 
-// Mean Squared Error
-double compute_loss(const std::vector<std::vector<double>>& X, const std::vector<double>& y, 
-                    const std::vector<double>& weights, double bias) {
-    
-    double total = 0.0;
-    for(size_t i = 0; i < X.size(); ++i) {
-        
-        double pred = predict(X[i], weights, bias);
-        total += std::pow(pred = y[i], 2);
-    }
+double MultiLinearRegression::compute_loss(
+    const std::vector<std::vector<double>>& X,
+    const std::vector<double>& y) const
+{
+    double total = 0;
+    for (size_t i = 0; i < X.size(); i++)
+        total += std::pow(predict(X[i]) - y[i], 2);
     return total / X.size();
 }
 
-// Gradient Descent step
-void update_weights(const std::vector<std::vector<double>>& X, const std::vector<double>& y,
-                    std::vector<double>& weights, double& bias, double learning_rate) {
+void MultiLinearRegression::train(
+    const std::vector<std::vector<double>>& X,
+    const std::vector<double>& y,
+    int epochs)
+{
+    size_t n = X.size(), m = X[0].size();
+    weights_.assign(m, 0.0);
 
-    size_t n = X.size();
-    size_t m = weights.size();
+    for (int e = 0; e <= epochs; e++) {
+        std::vector<double> grad_w(m, 0.0);
+        double grad_b = 0;
 
-    std::vector<double> grad_w(m, 0.0);
-    double grad_b = 0.0;
+        for (size_t i = 0; i < n; i++) {
+            double pred = predict(X[i]);
+            double err = pred - y[i];
 
-    for(size_t i = 0; i < n; ++i) {
-
-        double pred = predict(X[i], weights, bias);
-        double error = pred - y[i];
-
-        for(size_t j = 0; j < m; ++j){
-            weights[j] -= learning_rate * grad_w[j] / n;
+            for (size_t j = 0; j < m; j++) grad_w[j] += err * X[i][j];
+            grad_b += err;
         }
-        bias -= learning_rate * grad_b / n;
+
+        for (size_t j = 0; j < m; j++)
+            weights_[j] -= learning_rate_ * grad_w[j] / n;
+        bias_ -= learning_rate_ * grad_b / n;
+
+        if (e % 500 == 0)
+            std::cout << "Epoch " << e
+                      << " | Loss=" << compute_loss(X, y)
+                      << " | b=" << bias_ << "\n";
     }
 }
 
-int main() {
-
-    // Example dataset: y = 2*x1 + 3*x2 + 5
-    std::vector<std::vector<double>> X = {
-        {1, 2},
-        {2, 3},
-        {3, 4},
-        {4, 5},
-        {5, 6}
-    };
-
-    std::vector<double> y = {13, 18, 23, 28, 33};
-    std::vector<double> weights = {0.0, 0.0};
-
-    double bias = 0.0;
-    double learning_rate = 0.01;
-    int epochs = 5000;
-
-    for(int epoch = 0; epoch <= epochs; ++epoch) {
-        
-        update_weights(X, y, weights, bias, learning_rate);
-
-        if(epoch % 500 == 0) {
-            double loss = compute_loss(X, y, weights, bias);
-            std::cout << "Epoch " << std::setw(5) << epoch
-                      << " | Loss: " << std::setw(8) << std::fixed << std::setprecision(4) << loss
-                      << " | w1: " << std::setw(6) << weights[0]
-                      << " | w2: " << std::setw(6) << weights[1]
-                      << " | b: " << std::setw(6) << bias
-                      << std::endl;
-        }
-    }
-
-    // Prediction example
-    std::vector<double> new_input = {6, 7};
-    double prediction = predict(new_input, weights, bias);
-    std::cout << "\nPrediction for [6, 7]: " << prediction << std::endl;
-
-    return 0;
-}

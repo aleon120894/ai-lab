@@ -156,4 +156,3 @@ void KMeansClusterer::train(std::vector<DataPoint>& data) {
         }
     }
 }
-
