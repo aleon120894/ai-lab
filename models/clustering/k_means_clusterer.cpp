@@ -127,6 +127,7 @@ bool KMeansClusterer::update_centroids(const std::vector<DataPoint>& data) {
  */
 
 void KMeansClusterer::train(std::vector<DataPoint>& data) {
+    
     if (data.size() < K || data.empty()) {
         std::cerr << "Error: Dataset size is insufficient for K-Means with K=" << K << std::endl;
         return;

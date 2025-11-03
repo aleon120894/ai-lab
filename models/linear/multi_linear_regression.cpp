@@ -17,6 +17,7 @@ double MultiLinearRegression::compute_loss(
     const std::vector<double>& y) const
 {
     double total = 0;
+    
     for (size_t i = 0; i < X.size(); i++)
         total += std::pow(predict(X[i]) - y[i], 2);
     return total / X.size();

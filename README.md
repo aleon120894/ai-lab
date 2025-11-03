@@ -28,7 +28,8 @@ It is intended as an educational project for understanding the basics of AI/ML w
 │       ├── logistic_regression.h
 │       └── multi_linear_regression.cpp
 └── README.md
-                       # Documentation
+
+# Documentation
 
 
 ---
@@ -58,7 +59,7 @@ make
 
 Run the executable:
 ```bash
-./ai_cpp_demo
+./ai_lab_demo
 ```
 
 

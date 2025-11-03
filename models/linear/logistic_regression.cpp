@@ -19,18 +19,18 @@ LogisticRegression::LogisticRegression(double learning_rate, int max_iters)
 
 // --- Train method ---
 void LogisticRegression::train(std::vector<DataPoint>& data) {
+
     if (data.empty()) {
         std::cerr << "Warning: Cannot train on empty dataset." << std::endl;
         return;
     }
 
-    // припускаємо, що останній елемент features — це target
     num_features_ = data[0].features.size() - 1;
     if (num_features_ <= 0) {
         throw std::runtime_error("Dataset must have at least one feature and one target.");
     }
 
-    // Ініціалізація ваг
+    // Weights initialization
     std::random_device rd;
     std::mt19937 gen(rd());
     std::normal_distribution<> d(0.0, 0.01);
