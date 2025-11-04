@@ -1,7 +1,13 @@
 # 🚀 AI Demo Project (C++)
 
-This project demonstrates core Machine Learning algorithms, including **Linear Regression**, **Multi Linear Regression** (both implemented via **Gradient Descent**), and **K-Means Clustering** (an unsupervised iterative algorithm), **Logistic regression** all built from scratch in C++.
-It is intended as an educational project for understanding the basics of AI/ML without external frameworks.
+This project demonstrates core Machine Learning algorithms built **from scratch in C++** — without any external ML frameworks:
+
+✅ Linear Regression  
+✅ Multi Linear Regression (Gradient Descent)  
+✅ Logistic Regression  
+✅ K-Means Clustering (Unsupervised Learning)
+
+Great for learning fundamentals of AI/ML through pure implementation!
 
 ---
 
@@ -9,30 +15,26 @@ It is intended as an educational project for understanding the basics of AI/ML w
 
 ```plaintext
 ├── app
-│   └── main.cpp
+│   └── main.cpp
 ├── CMakeLists.txt
 ├── core
-│   └── data_types.h
+│   └── data_types.h
 ├── data
-│   └── preprocessing
-│       ├── csv_parser.cpp
-│       ├── csv_parser.h
-│       ├── data_preprocessor.cpp
-│       └── data_preprocessor.h
+│   └── preprocessing
+│       ├── csv_parser.cpp
+│       ├── csv_parser.h
+│       ├── data_preprocessor.cpp
+│       └── data_preprocessor.h
 ├── models
-│   ├── clustering
-│   │   ├── k_means_clusterer.cpp
-│   │   └── k_means_clusterer.h
-│   └── linear
-│       ├── logistic_regression.cpp
-│       ├── logistic_regression.h
-│       └── multi_linear_regression.cpp
+│   ├── clustering
+│   │   ├── k_means_clusterer.cpp
+│   │   └── k_means_clusterer.h
+│   └── linear
+│       ├── logistic_regression.cpp
+│       ├── logistic_regression.h
+│       └── multi_linear_regression.cpp
 └── README.md
 
-# Documentation
-
-
----
 
 ## 🛠 Installation
 
