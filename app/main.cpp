@@ -103,11 +103,37 @@ void run_multi_linear_regression_demo() {
 //     std::cout << "Prediction for 1.5: " << prediction << std::endl;
 // }
 
+
+void show_menu() {
+    std::cout << "\n==============================\n";
+    std::cout << "  AI Lab — Model Selection\n";
+    std::cout << "==============================\n";
+    std::cout << "1. K-Means Clustering\n";
+    std::cout << "2. Multi-Linear Regression\n";
+    std::cout << "3. Exit\n";
+    std::cout << "Choose option: ";
+}
+
 int main() {
-    run_k_means_demo();
-    run_multi_linear_regression_demo();
-    // run_logistic_regression_demo();
-    return 0;
+    int choice;
+
+    while(true) {
+
+        show_menu();
+        std::cin >> choice;
+
+        if(std::cin.fail()) {
+            std::cin.clear();
+            std::cin.ignore(10000, '\n');
+            std::cout << "Invalid input! Try again.\n";
+            continue;
+        }
+
+        if(choice == 1) run_k_means_demo();
+        else if(choice == 2) run_multi_linear_regression_demo();
+        else if(choice == 3) break;
+        else std::cout << "Invalid option!\n";
+    }
 }
 
 
