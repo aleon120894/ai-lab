@@ -135,3 +135,25 @@ int main() {
         else std::cout << "Invalid option!\n";
     }
 }
+
+int main() {
+    int choice;
+
+    while(true) {
+
+        show_menu();
+        std::cin >> choice;
+
+        if(std::cin.fail()) {
+            std::cin.clear();
+            std::cin.ignore(10000, '\n');
+            std::cout << "Invalid input! Try again.\n";
+            continue;
+        }
+
+        if(choice == 1) run_k_means_demo();
+        else if(choice == 2) run_multi_linear_regression_demo();
+        else if(choice == 3) break;
+        else std::cout << "Invalid option!\n";
+    }
+}
