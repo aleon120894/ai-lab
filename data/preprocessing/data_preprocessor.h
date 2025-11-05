@@ -3,6 +3,7 @@
 #include <string>
 
 class DataPreprocessor {
+    
 public:
     // Converts string data into numeric feature matrix and label vector
     static void toNumeric(const std::vector<std::vector<std::string>>& raw,

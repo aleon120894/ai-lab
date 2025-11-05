@@ -34,12 +34,14 @@ void DataPreprocessor::normalize(std::vector<std::vector<double>>& features) {
 
     int n = features.size();
     int m = features[0].size();
+
     std::vector<double> minv(m, std::numeric_limits<double>::infinity());
     std::vector<double> maxv(m, -std::numeric_limits<double>::infinity());
 
     // Compute min and max for each column
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < m; ++j) {
+            
             minv[j] = std::min(minv[j], features[i][j]);
             maxv[j] = std::max(maxv[j], features[i][j]);
         }

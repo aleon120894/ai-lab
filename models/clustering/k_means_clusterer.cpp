@@ -90,10 +90,10 @@ bool KMeansClusterer::update_centroids(const std::vector<DataPoint>& data) {
 
     // 1. Sum up all features for points in each cluster
     for (const auto& point : data) {
+        
         int id = point.cluster_id;
 
         if (id >= 0 && id < K) {
-            
             cluster_counts[id]++;
             for (size_t i = 0; i < point.features.size(); ++i) {
                 new_centroids_sum[id][i] += point.features[i];
