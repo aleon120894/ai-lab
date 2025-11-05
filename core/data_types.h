@@ -10,6 +10,7 @@
  * cluster_id is used to store the assignment, and there is no explicit Y.
  */
 struct DataPoint {
+    
     std::vector<double> features; 
     int cluster_id = -1; // -1 means unassigned or not applicable
 

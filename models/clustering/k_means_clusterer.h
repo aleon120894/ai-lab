@@ -10,6 +10,7 @@
  * @brief Implements the K-Means Clustering algorithm from scratch.
  */
 class KMeansClusterer {
+    
 public:
     /**
      * @brief Constructor for KMeansClusterer.

@@ -2,6 +2,7 @@
 #include <cmath>
 #include <iostream>
 
+
 MultiLinearRegression::MultiLinearRegression(double learning_rate)
     : learning_rate_(learning_rate), bias_(0.0) {}
 

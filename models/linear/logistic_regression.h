@@ -3,6 +3,7 @@
 #include <cstddef> // для size_t
 #include "../../core/data_types.h"
 
+
 namespace aicpp {
 
 class LogisticRegression {
@@ -20,6 +21,7 @@ private:
     std::vector<double> weights_;
     double bias_;
     double learning_rate_;
+    
     int max_iters_;
     size_t num_features_; // <- тепер оголошено правильно
 };
