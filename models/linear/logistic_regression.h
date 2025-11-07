@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include <cstddef> // для size_t
+#include <cstddef> // for size_t
 #include "../../core/data_types.h"
 
 
@@ -23,7 +23,7 @@ private:
     double learning_rate_;
     
     int max_iters_;
-    size_t num_features_; // <- тепер оголошено правильно
+    size_t num_features_; 
 };
 
-} // namespace aicpp
+} // namespace aicpp 
