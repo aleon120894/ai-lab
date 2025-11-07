@@ -6,6 +6,7 @@
 #include <cmath>
 
 
+namespace aicpp {
 KMeansClusterer::KMeansClusterer(int k, int max_iters) :
     K(k), MAX_ITERATIONS(max_iters) {}
 
@@ -157,3 +158,4 @@ void KMeansClusterer::train(std::vector<DataPoint>& data) {
         }
     }
 }
+} // namespace aicpp

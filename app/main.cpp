@@ -3,7 +3,15 @@
 #include <iomanip>
 #include <algorithm>
 #include <cmath>
+
 #include "core/data_types.h"
+#include "models/clustering/k_means_clusterer.h" 
+#include "models/linear/logistic_regression.h"
+
+using aicpp::KMeansClusterer;
+using aicpp::DataPoint;
+
+
 
 // --- K-Means ---
 #include "models/clustering/k_means_clusterer.h"
@@ -88,20 +96,20 @@ void run_multi_linear_regression_demo() {
     std::cout << "Prediction for [6,7]: " << pred << std::endl;
 }
 
-// void run_logistic_regression_demo() {
-//     std::cout << "\n=== LOGISTIC REGRESSION DEMO ===" << std::endl;
+void run_logistic_regression_demo() {
+    std::cout << "\n=== LOGISTIC REGRESSION DEMO ===" << std::endl;
 
-//     std::vector<aicpp::DataPoint> data = {
-//         {{0.0, 0}}, {{1.0, 0}}, {{2.0, 1}}, {{3.0, 1}}
-//     };
+    std::vector<aicpp::DataPoint> data = {
+        {{0.0, 0}}, {{1.0, 0}}, {{2.0, 1}}, {{3.0, 1}}
+    };
 
-//     aicpp::LogisticRegression model(0.1, 1000);
-//     model.train(data);
+    aicpp::LogisticRegression model(0.1, 1000);
+    model.train(data);
 
-//     std::vector<double> new_input = {1.5};
-//     int prediction = model.predict(new_input);
-//     std::cout << "Prediction for 1.5: " << prediction << std::endl;
-// }
+    std::vector<double> new_input = {1.5};
+    int prediction = model.predict(new_input);
+    std::cout << "Prediction for 1.5: " << prediction << std::endl;
+}
 
 
 void show_menu() {
@@ -110,7 +118,8 @@ void show_menu() {
     std::cout << "==============================\n";
     std::cout << "1. K-Means Clustering\n";
     std::cout << "2. Multi-Linear Regression\n";
-    std::cout << "3. Exit\n";
+    std::cout << "3. Logistic Regression\n";
+    std::cout << "4. Exit\n";
     std::cout << "Choose option: ";
 }
 
@@ -131,7 +140,8 @@ int main() {
 
         if(choice == 1) run_k_means_demo();
         else if(choice == 2) run_multi_linear_regression_demo();
-        else if(choice == 3) break;
+        else if(choice == 3) run_logistic_regression_demo();
+        else if(choice == 4) break;
         else std::cout << "Invalid option!\n";
     }
 }

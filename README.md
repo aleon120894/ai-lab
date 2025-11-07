@@ -64,15 +64,86 @@ Run the executable:
 ./ai_lab_demo
 ```
 
+You will see an interactive menu:
+```plaintext 
+==============================
+  AI Lab — Model Selection
+==============================
+1. K-Means Clustering
+2. Multi-Linear Regression
+3. Logistic Regression
+4. Exit
+```
 
-Expected training log
+Choose a model to run.
+
+## 📊 Example Outputs
+
+### 1️⃣ K-Means Clustering
+
 ```plaintext
+Running K-Means clustering on demo dataset...
+
+Cluster assignment results:
+(1.0, 2.0) → Cluster 0
+(5.0, 8.0) → Cluster 1
+(9.0, 10.0) → Cluster 2
+...
+
+Final centroid positions:
+Cluster 0: (1.25, 1.90)
+Cluster 1: (6.20, 7.50)
+Cluster 2: (9.10, 8.30)
+```
+
+
+### 2️⃣ Multi-Linear Regression
+
+```plaintext
+Training Multi-Linear Regression...
 Epoch 0   | Loss: 106250.0 | w: 5.0 b: 1.0
-Epoch 100 | Loss: 532.4    | w: 4.97 b: -49.8
 Epoch 200 | Loss: 310.5    | w: 4.98 b: -50.0
 ...
-Prediction for x=55: ~225
+Prediction for x = [55, 3] → ~225
 ```
+
+### 3️⃣ Logistic Regression
+
+```plaintext
+Training Logistic Regression...
+Epoch 0   | Loss: 0.69
+Epoch 200 | Loss: 0.42
+...
+Prediction for x = 3.0 → Class: 1 (p = 0.83)
+```
+
+## 🧠 Algorithms Implemented
+
+| Model                    | Technique                      | Problem Type     |
+|-------------------------|--------------------------------|-----------------|
+| Linear Regression       | Gradient Descent               | Regression      |
+| Multi-Linear Regression | Gradient Descent + MSE         | Regression      |
+| Logistic Regression     | Sigmoid + BCE Loss             | Classification  |
+| K-Means                 | Euclidean Distance Clustering  | Unsupervised    |
+
+All models are implemented using raw **C++** and **STL containers**, without external ML frameworks.
+
+---
+
+## 🔮 Roadmap / Planned Features
+
+✅ CSV dataset loading support  
+🔄 Command-line args for batch mode  
+🔄 PCA dimensionality reduction  
+🔄 Training metrics visualization  
+🔄 CI/CD with GitHub Actions  
+
+---
+
+## 🤝 Contributing
+
+Pull Requests are welcome!  
+Feel free to extend or improve the learning demos 😊
 
 📓 Notes
 

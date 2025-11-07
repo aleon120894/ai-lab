@@ -9,7 +9,8 @@
  * cluster_id is ignored. In unsupervised learning (like K-Means), 
  * cluster_id is used to store the assignment, and there is no explicit Y.
  */
-struct DataPoint {
+namespace aicpp {
+    struct DataPoint {
     
     std::vector<double> features; 
     int cluster_id = -1; // -1 means unassigned or not applicable
@@ -18,5 +19,6 @@ struct DataPoint {
     DataPoint(const std::vector<double>& f) : features(f) {}
     DataPoint() = default;
 };
+} // namespace aicpp
 
 #endif // AI_LAB_DATA_TYPES_H
