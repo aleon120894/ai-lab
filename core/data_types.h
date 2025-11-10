@@ -13,11 +13,18 @@ namespace aicpp {
     struct DataPoint {
     
     std::vector<double> features; 
-    int cluster_id = -1; // -1 means unassigned or not applicable
+
+    // For supervised learning (Decision Tree, Logistic Regression)
+    int label = -1;
+
+    // For unsupervised learning (K-Means)
+    int cluster_id = -1;
+
 
     // Constructor for easy initialization
-    DataPoint(const std::vector<double>& f) : features(f) {}
     DataPoint() = default;
+    DataPoint(const std::vector<double>& f, int lbl = -1)
+        : features(f), label(lbl) {}
 };
 } // namespace aicpp
 
