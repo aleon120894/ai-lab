@@ -4,13 +4,14 @@
 #include <vector>
 #include <memory>
 #include <limits>
-#include "../../core/data_types.h"
+#include "core/data_types.h"
 
 namespace aicpp {
 
 struct TreeNode {
     bool is_leaf = false;
-    int predicted_label = -1;
+    // int predicted_label = -1; 
+    int class_label = -1;
 
     int feature_index = -1;
     double threshold = 0.0;
