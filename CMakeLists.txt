@@ -11,6 +11,7 @@ file(GLOB_RECURSE APP_SOURCES app/*.cpp)
 file(GLOB_RECURSE DATA_SOURCES data/preprocessing/*.cpp)
 file(GLOB_RECURSE MODEL_LINEAR_SOURCES models/linear/*.cpp)
 file(GLOB_RECURSE MODEL_CLUSTER_SOURCES models/clustering/*.cpp)
+file(GLOB_RECURSE MODEL_DECISION_TREE_SOURCES decision_tree/*.cpp)
 
 # Create executable
 add_executable(ai_lab_demo
@@ -18,6 +19,7 @@ add_executable(ai_lab_demo
     ${DATA_SOURCES}
     ${MODEL_LINEAR_SOURCES}
     ${MODEL_CLUSTER_SOURCES}
+    ${MODEL_DECISION_TREE_SOURCES}
 )
 
 # Include directories

@@ -7,6 +7,7 @@
 #include "core/data_types.h"
 #include "models/clustering/k_means_clusterer.h" 
 #include "models/linear/logistic_regression.h"
+#include "decision_tree/decision_tree.h"
 
 using aicpp::KMeansClusterer;
 using aicpp::DataPoint;
@@ -111,6 +112,23 @@ void run_logistic_regression_demo() {
     std::cout << "Prediction for 1.5: " << prediction << std::endl;
 }
 
+void run_decision_tree_demo() {
+    using namespace aicpp;
+
+    std::vector<DataPoint> xor_data = {
+        {{0,0}, 0},
+        {{0,1}, 1},
+        {{1,0}, 1},
+        {{1,1}, 0}
+    };
+
+    DecisionTreeClassifier tree(3, 1);
+    tree.train(xor_data);
+
+    std::cout << "Prediction [1,1] -> " 
+              << tree.predict({{1,1}, -1}) << "\n";
+}
+
 
 void show_menu() {
     std::cout << "\n==============================\n";
@@ -119,7 +137,8 @@ void show_menu() {
     std::cout << "1. K-Means Clustering\n";
     std::cout << "2. Multi-Linear Regression\n";
     std::cout << "3. Logistic Regression\n";
-    std::cout << "4. Exit\n";
+    std::cout << "4. Decision Tree\n";
+    std::cout << "5. Exit\n";
     std::cout << "Choose option: ";
 }
 
@@ -141,7 +160,8 @@ int main() {
         if(choice == 1) run_k_means_demo();
         else if(choice == 2) run_multi_linear_regression_demo();
         else if(choice == 3) run_logistic_regression_demo();
-        else if(choice == 4) break;
+        else if(choice == 4) run_decision_tree_demo();
+        else if(choice == 5) break;
         else std::cout << "Invalid option!\n";
     }
 }

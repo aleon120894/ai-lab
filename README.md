@@ -25,6 +25,9 @@ Great for learning fundamentals of AI/ML through pure implementation!
 │       ├── csv_parser.h
 │       ├── data_preprocessor.cpp
 │       └── data_preprocessor.h
+├── decision_tree
+│   ├── decision_tree.cpp
+│   └── decision_tree.h
 ├── models
 │   ├── clustering
 │   │   ├── k_means_clusterer.cpp
@@ -72,7 +75,8 @@ You will see an interactive menu:
 1. K-Means Clustering
 2. Multi-Linear Regression
 3. Logistic Regression
-4. Exit
+4. Decision tree
+5. Exit
 ```
 
 Choose a model to run.
@@ -115,6 +119,12 @@ Epoch 0   | Loss: 0.69
 Epoch 200 | Loss: 0.42
 ...
 Prediction for x = 3.0 → Class: 1 (p = 0.83)
+```
+
+### 4️⃣ Decision Tree
+
+```plaintext
+Prediction [1,1] -> 0 
 ```
 
 ## 🧠 Algorithms Implemented
