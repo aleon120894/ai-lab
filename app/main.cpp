@@ -7,7 +7,7 @@
 #include "core/data_types.h"
 #include "models/clustering/k_means_clusterer.h" 
 #include "models/linear/logistic_regression.h"
-#include "decision_tree/decision_tree.h"
+#include "models/decision_tree/decision_tree.h"
 
 using aicpp::KMeansClusterer;
 using aicpp::DataPoint;

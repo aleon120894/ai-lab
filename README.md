@@ -15,28 +15,30 @@ Great for learning fundamentals of AI/ML through pure implementation!
 
 ```plaintext
 ├── app
-│   └── main.cpp
+│   └── main.cpp
 ├── CMakeLists.txt
 ├── core
-│   └── data_types.h
+│   └── data_types.h
 ├── data
-│   └── preprocessing
-│       ├── csv_parser.cpp
-│       ├── csv_parser.h
-│       ├── data_preprocessor.cpp
-│       └── data_preprocessor.h
-├── decision_tree
-│   ├── decision_tree.cpp
-│   └── decision_tree.h
+│   └── preprocessing
+│       ├── csv_parser.cpp
+│       ├── csv_parser.h
+│       ├── data_preprocessor.cpp
+│       └── data_preprocessor.h
 ├── models
-│   ├── clustering
-│   │   ├── k_means_clusterer.cpp
-│   │   └── k_means_clusterer.h
-│   └── linear
-│       ├── logistic_regression.cpp
-│       ├── logistic_regression.h
-│       └── multi_linear_regression.cpp
+│   ├── clustering
+│   │   ├── k_means_clusterer.cpp
+│   │   └── k_means_clusterer.h
+│   ├── decision_tree
+│   │   ├── decision_tree.cpp
+│   │   └── decision_tree.h
+│   └── linear
+│       ├── logistic_regression.cpp
+│       ├── logistic_regression.h
+│       ├── multi_linear_regression.cpp
+│       └── multi_linear_regression.h
 └── README.md
+```
 
 
 ## 🛠 Installation
