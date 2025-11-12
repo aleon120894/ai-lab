@@ -43,6 +43,7 @@ std::unique_ptr<TreeNode> DecisionTreeClassifier::build_tree(
 
     int num_features = data[0].features.size();
     double best_cost = 1e9;
+
     int best_feature = 0;
     double best_threshold = 0;
 

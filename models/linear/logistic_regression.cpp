@@ -44,14 +44,16 @@ void LogisticRegression::train(std::vector<DataPoint>& data) {
               << num_features_ << " features, " << max_iters_ << " epochs)..." << std::endl;
 
     for (int epoch = 0; epoch < max_iters_; ++epoch) {
+
         std::vector<double> dw(num_features_, 0.0);
         double db = 0.0;
         double total_loss = 0.0;
 
         for (auto& point : data) {
-            double y_true = point.features.back();
 
+            double y_true = point.features.back();
             double z = bias_;
+
             for (size_t i = 0; i < num_features_; ++i) z += point.features[i] * weights_[i];
 
             double y_pred = sigmoid(z);
@@ -64,6 +66,7 @@ void LogisticRegression::train(std::vector<DataPoint>& data) {
         }
 
         for (size_t i = 0; i < num_features_; ++i) dw[i] /= data.size();
+
         db /= data.size();
         double avg_loss = total_loss / data.size();
 
@@ -82,6 +85,7 @@ void LogisticRegression::train(std::vector<DataPoint>& data) {
 
 // --- Predict probability ---
 double LogisticRegression::predict_proba(const std::vector<double>& features) const {
+    
     if (features.size() != num_features_) throw std::runtime_error("Feature size mismatch.");
 
     double z = bias_;
