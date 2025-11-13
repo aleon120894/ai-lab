@@ -126,7 +126,17 @@ Prediction for x = 3.0 → Class: 1 (p = 0.83)
 ### 4️⃣ Decision Tree
 
 ```plaintext
-Prediction [1,1] -> 0 
+Node: f0 < 1
+  Node: f1 < 1
+    Leaf: class=0
+    Leaf: class=1
+  Node: f1 < 1
+    Leaf: class=1
+    Leaf: class=0
+Prediction [0,0] -> 0
+Prediction [0,1] -> 1
+Prediction [1,0] -> 1
+Prediction [1,1] -> 0
 ```
 
 ## 🧠 Algorithms Implemented

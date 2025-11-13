@@ -113,20 +113,30 @@ void run_logistic_regression_demo() {
 }
 
 void run_decision_tree_demo() {
+
+    std::cout << "\n=== DECISION TREE DEMO ===" << std::endl;
+    
     using namespace aicpp;
 
     std::vector<DataPoint> xor_data = {
-        {{0,0}, 0},
-        {{0,1}, 1},
-        {{1,0}, 1},
-        {{1,1}, 0}
+        {{0,0}, 0}, {{0,1}, 1}, {{1,0}, 1}, {{1,1}, 0}
     };
 
     DecisionTreeClassifier tree(3, 1);
     tree.train(xor_data);
 
-    std::cout << "Prediction [1,1] -> " 
-              << tree.predict({{1,1}, -1}) << "\n";
+    tree.print_tree();
+
+    std::vector<DataPoint> test_points = {
+        {{0,0}, -1}, {{0,1}, -1}, {{1,0}, -1}, {{1,1}, -1}
+    };
+    auto predictions = tree.predict_batch(test_points);
+
+    for(size_t i = 0; i < test_points.size(); ++i) {
+        std::cout << "Prediction [" << test_points[i].features[0] 
+                  << "," << test_points[i].features[1] << "] -> "
+                  << predictions[i] << "\n";
+    }
 }
 
 
