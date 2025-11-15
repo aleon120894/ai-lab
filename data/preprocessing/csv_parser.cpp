@@ -24,6 +24,7 @@ std::vector<std::vector<std::string>> CSVParser::readCSV(const std::string& file
         while (std::getline(ss, cell, delimiter)) {
             row.push_back(cell);
         }
+        
         output.push_back(row);
     }
 

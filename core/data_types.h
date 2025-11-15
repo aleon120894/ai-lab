@@ -11,6 +11,7 @@
  */
 
 namespace aicpp {
+    
     struct DataPoint {
     
     std::vector<double> features; 

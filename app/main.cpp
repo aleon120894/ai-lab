@@ -20,15 +20,19 @@ using aicpp::DataPoint;
 // --- Logistic Regression ---
 #include "models/linear/logistic_regression.h"
 
+
 // --- Multi-Linear Regression (functions from multi_linear_regression.cpp) ---
 double mlr_predict(const std::vector<double>& features, const std::vector<double>& weights, double bias) {
+
     double result = bias;
     for(size_t i = 0; i < weights.size(); ++i) result += weights[i] * features[i];
+
     return result;
 }
 
 double mlr_compute_loss(const std::vector<std::vector<double>>& X, const std::vector<double>& y,
                         const std::vector<double>& weights, double bias) {
+
     double total = 0.0;
     for(size_t i = 0; i < X.size(); ++i) {
         double pred = mlr_predict(X[i], weights, bias);
@@ -45,18 +49,23 @@ void mlr_update_weights(const std::vector<std::vector<double>>& X, const std::ve
     double grad_b = 0.0;
 
     for(size_t i = 0; i < n; ++i) {
+
         double pred = mlr_predict(X[i], weights, bias);
         double error = pred - y[i];
         for(size_t j = 0; j < m; ++j) grad_w[j] += error * X[i][j];
         grad_b += error;
     }
+
     for(size_t j = 0; j < m; ++j) weights[j] -= lr * grad_w[j] / n;
     bias -= lr * grad_b / n;
 }
 
 // --- Demos ---
 void run_k_means_demo() {
-    std::cout << "\n=== K-MEANS CLUSTERING DEMO ===" << std::endl;
+
+    std::cout << "\n==============================\n";
+    std::cout << "   K-MEANS CLUSTERING DEMO\n";
+    std::cout << "==============================\n";
 
     std::vector<DataPoint> dataset = {
         {{1.0, 1.2}}, {{1.5, 1.0}}, {{1.1, 1.5}}, {{2.0, 1.9}},
@@ -74,7 +83,10 @@ void run_k_means_demo() {
 }
 
 void run_multi_linear_regression_demo() {
-    std::cout << "\n=== MULTI-LINEAR REGRESSION DEMO ===" << std::endl;
+
+    std::cout << "\n==============================\n";
+    std::cout << "   MULTI-LINEAR REGRESSION DEMO\n";
+    std::cout << "==============================\n";
 
     std::vector<std::vector<double>> X = {{1,2},{2,3},{3,4},{4,5},{5,6}};
     std::vector<double> y = {13, 18, 23, 28, 33};
@@ -98,7 +110,10 @@ void run_multi_linear_regression_demo() {
 }
 
 void run_logistic_regression_demo() {
-    std::cout << "\n=== LOGISTIC REGRESSION DEMO ===" << std::endl;
+
+    std::cout << "\n==============================\n";
+    std::cout << "   LOGISTIC REGRESSION DEMO\n";
+    std::cout << "==============================\n";
 
     std::vector<aicpp::DataPoint> data = {
         {{0.0, 0}}, {{1.0, 0}}, {{2.0, 1}}, {{3.0, 1}}
@@ -114,7 +129,9 @@ void run_logistic_regression_demo() {
 
 void run_decision_tree_demo() {
 
-    std::cout << "\n=== DECISION TREE DEMO ===" << std::endl;
+    std::cout << "\n==============================\n";
+    std::cout << "   DECISION TREE DEMO\n";
+    std::cout << "==============================\n";
     
     using namespace aicpp;
 
