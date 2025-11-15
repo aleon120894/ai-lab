@@ -14,6 +14,7 @@ namespace aicpp {
 class KMeansClusterer {
 
 public:
+
     KMeansClusterer(int k, int max_iters);
 
     /**
@@ -29,6 +30,7 @@ public:
     }
 
 private:
+
     int K;
     int MAX_ITERATIONS;
 

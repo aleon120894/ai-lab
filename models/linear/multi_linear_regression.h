@@ -2,6 +2,7 @@
 #include <vector>
 
 class MultiLinearRegression {
+    
 private:
     std::vector<double> weights_;
     double bias_;

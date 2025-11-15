@@ -7,6 +7,7 @@
 
 
 namespace aicpp {
+
 KMeansClusterer::KMeansClusterer(int k, int max_iters) :
     K(k), MAX_ITERATIONS(max_iters) {}
 
@@ -15,6 +16,7 @@ KMeansClusterer::KMeansClusterer(int k, int max_iters) :
  * The formula is: d(p, q) = sqrt(sum((qi - pi)^2))
  */
 double KMeansClusterer::euclidean_distance(const std::vector<double>& p1, const std::vector<double>& p2) const {
+
     if (p1.size() != p2.size()) {
         std::cerr << "Error: Vectors must have the same dimension for distance calculation." << std::endl;
         return std::numeric_limits<double>::max();
@@ -64,11 +66,13 @@ double KMeansClusterer::euclidean_distance(const std::vector<double>& p1, const 
 void KMeansClusterer::assign_clusters(std::vector<DataPoint>& data) {
 
     for (auto& point : data) {
+
         double min_dist = std::numeric_limits<double>::max();
         int best_cluster_id = -1;
 
         // Compare the point to every centroid
         for (size_t i = 0; i < centroids.size(); ++i) {
+            
             double dist = euclidean_distance(point.features, centroids[i]);
             if (dist < min_dist) {
                 min_dist = dist;
