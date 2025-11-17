@@ -8,6 +8,7 @@
 #include "models/clustering/k_means_clusterer.h" 
 #include "models/linear/logistic_regression.h"
 #include "models/decision_tree/decision_tree.h"
+#include "models/neural/neural_network.h"
 
 using aicpp::KMeansClusterer;
 using aicpp::DataPoint;
@@ -156,6 +157,32 @@ void run_decision_tree_demo() {
     }
 }
 
+void run_neural_network_demo() {
+
+    using namespace aicpp;
+
+    std::cout << "\n==============================\n";
+    std::cout << "   NEURAL NETWORK — XOR DEMO\n";
+    std::cout << "==============================\n";
+
+    NeuralNetwork nn({2, 4, 1}, 0.5);
+
+    std::vector<std::vector<double>> X = {
+        {0,0}, {0,1}, {1,0}, {1,1}
+    };
+    std::vector<std::vector<double>> Y = {
+        {0}, {1}, {1}, {0}
+    };
+
+    nn.train(X, Y, 10000);
+
+    for (auto& x : X) {
+        double pred = nn.predict(x)[0];
+        std::cout << x[0] << " XOR " << x[1]
+                  << " -> " << pred << "\n";
+    }
+}
+
 
 void show_menu() {
     std::cout << "\n==============================\n";
@@ -165,7 +192,8 @@ void show_menu() {
     std::cout << "2. Multi-Linear Regression\n";
     std::cout << "3. Logistic Regression\n";
     std::cout << "4. Decision Tree\n";
-    std::cout << "5. Exit\n";
+    std::cout << "5. Neural Network\n";
+    std::cout << "6. Exit\n";
     std::cout << "Choose option: ";
 }
 
@@ -188,7 +216,8 @@ int main() {
         else if(choice == 2) run_multi_linear_regression_demo();
         else if(choice == 3) run_logistic_regression_demo();
         else if(choice == 4) run_decision_tree_demo();
-        else if(choice == 5) break;
+        else if(choice == 5) run_neural_network_demo();
+        else if(choice == 6) break;
         else std::cout << "Invalid option!\n";
     }
 }
