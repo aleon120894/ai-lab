@@ -33,10 +33,13 @@ Great for learning fundamentals of AI/ML through pure implementation!
 │   │   ├── decision_tree.cpp
 │   │   └── decision_tree.h
 │   └── linear
-│       ├── logistic_regression.cpp
-│       ├── logistic_regression.h
-│       ├── multi_linear_regression.cpp
-│       └── multi_linear_regression.h
+│   |    ├── logistic_regression.cpp
+│   |    ├── logistic_regression.h
+│   |    ├── multi_linear_regression.cpp
+│   |    └── multi_linear_regression.h
+│   └── neural
+│       ├── neural_network.cpp
+│       └── neural_network.h
 └── README.md
 ```
 
@@ -78,7 +81,8 @@ You will see an interactive menu:
 2. Multi-Linear Regression
 3. Logistic Regression
 4. Decision tree
-5. Exit
+5. Neural Network
+6. Exit
 ```
 
 Choose a model to run.
@@ -137,6 +141,29 @@ Prediction [0,0] -> 0
 Prediction [0,1] -> 1
 Prediction [1,0] -> 1
 Prediction [1,1] -> 0
+```
+
+### 5 Neural Network
+
+```plaintext
+==============================
+   NEURAL NETWORK — XOR DEMO
+==============================
+Epoch 0 | Loss: 0.133825
+Epoch 1000 | Loss: 0.13016
+Epoch 2000 | Loss: 0.0032863
+Epoch 3000 | Loss: 0.00100645
+Epoch 4000 | Loss: 0.000575667
+Epoch 5000 | Loss: 0.000399318
+Epoch 6000 | Loss: 0.000304359
+Epoch 7000 | Loss: 0.000245299
+Epoch 8000 | Loss: 0.000205129
+Epoch 9000 | Loss: 0.000176089
+0 XOR 0 -> 0.0176398
+0 XOR 1 -> 0.983232
+1 XOR 0 -> 0.983175
+1 XOR 1 -> 0.0189048
+
 ```
 
 ## 🧠 Algorithms Implemented
