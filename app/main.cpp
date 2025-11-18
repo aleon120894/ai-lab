@@ -165,21 +165,18 @@ void run_neural_network_demo() {
     std::cout << "   NEURAL NETWORK — XOR DEMO\n";
     std::cout << "==============================\n";
 
-    NeuralNetwork nn({2, 4, 1}, 0.5);
+   // architecture: input=2, hidden1=32, hidden2=8, output=1
+    NeuralNetwork nn({2, 32, 8, 1}, 0.1);
 
-    std::vector<std::vector<double>> X = {
-        {0,0}, {0,1}, {1,0}, {1,1}
-    };
-    std::vector<std::vector<double>> Y = {
-        {0}, {1}, {1}, {0}
-    };
+    std::vector<std::vector<double>> X = {{0,0}, {0,1}, {1,0}, {1,1}};
+    std::vector<std::vector<double>> Y = {{0},   {1},   {1},   {0}};
 
-    nn.train(X, Y, 10000);
+    nn.train(X, Y, 5000);
 
-    for (auto& x : X) {
-        double pred = nn.predict(x)[0];
-        std::cout << x[0] << " XOR " << x[1]
-                  << " -> " << pred << "\n";
+    for (const auto& x : X) {
+        double p = nn.predict_proba(x)[0];
+        int label = nn.predict_label(x);
+        std::cout << x[0] << " XOR " << x[1] << " -> p=" << p << " label=" << label << "\n";
     }
 }
 
