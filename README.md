@@ -149,31 +149,32 @@ Prediction [1,1] -> 0
 ==============================
    NEURAL NETWORK — XOR DEMO
 ==============================
-Epoch 0 | Loss: 0.133825
-Epoch 1000 | Loss: 0.13016
-Epoch 2000 | Loss: 0.0032863
-Epoch 3000 | Loss: 0.00100645
-Epoch 4000 | Loss: 0.000575667
-Epoch 5000 | Loss: 0.000399318
-Epoch 6000 | Loss: 0.000304359
-Epoch 7000 | Loss: 0.000245299
-Epoch 8000 | Loss: 0.000205129
-Epoch 9000 | Loss: 0.000176089
-0 XOR 0 -> 0.0176398
-0 XOR 1 -> 0.983232
-1 XOR 0 -> 0.983175
-1 XOR 1 -> 0.0189048
-
+Epoch 0 | Loss: 0.130228
+Epoch 500 | Loss: 0.0354588
+Epoch 1000 | Loss: 0.00383305
+Epoch 1500 | Loss: 0.00137337
+Epoch 2000 | Loss: 0.000754239
+Epoch 2500 | Loss: 0.00049798
+Epoch 3000 | Loss: 0.000363197
+Epoch 3500 | Loss: 0.00028189
+Epoch 4000 | Loss: 0.000228136
+Epoch 4500 | Loss: 0.000190376
+0 XOR 0 -> p=0.0159469 label=0
+0 XOR 1 -> p=0.977828 label=1
+1 XOR 0 -> p=0.98469 label=1
+1 XOR 1 -> p=0.0179071 label=0
 ```
 
 ## 🧠 Algorithms Implemented
 
-| Model                    | Technique                      | Problem Type     |
-|-------------------------|--------------------------------|-----------------|
-| Linear Regression       | Gradient Descent               | Regression      |
-| Multi-Linear Regression | Gradient Descent + MSE         | Regression      |
-| Logistic Regression     | Sigmoid + BCE Loss             | Classification  |
-| K-Means                 | Euclidean Distance Clustering  | Unsupervised    |
+| Model                   | Technique                      | Problem Type     |
+|-------------------------|--------------------------------|-------------------|
+| Linear Regression       | Gradient Descent               | Regression        |
+| Multi-Linear Regression | Gradient Descent + MSE         | Regression        |
+| Logistic Regression     | Sigmoid + BCE Loss             | Classification    |
+| K-Means                 | Euclidean Distance Clustering  | Unsupervised      |
+| Decision Tree           | Classification model           | Classification    |
+| Neural Network          | Backpropagation                | Classification    |
 
 All models are implemented using raw **C++** and **STL containers**, without external ML frameworks.
 
