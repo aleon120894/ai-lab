@@ -33,12 +33,13 @@ private:
     std::vector<std::vector<std::vector<double>>> weights_;
     std::vector<std::vector<double>> biases_;
 
-    // helpers used per-sample during forward/backward
+    // Helpers used per-sample during forward/backward
     mutable std::vector<std::vector<double>> activations_; // size = layers_.size()
     mutable std::vector<std::vector<double>> zs_;          // pre-activations (for hidden+out)
 
     double sigmoid(double x) const;
     double sigmoid_derivative_from_activation(double a) const;
+
     double relu(double x) const;
     double relu_derivative(double x) const;
 

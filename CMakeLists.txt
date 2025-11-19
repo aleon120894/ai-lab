@@ -10,15 +10,18 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic")
 file(GLOB_RECURSE APP_SOURCES app/*.cpp)
 file(GLOB_RECURSE DATA_SOURCES data/preprocessing/*.cpp)
 file(GLOB_RECURSE MODEL_LINEAR_SOURCES models/linear/*.cpp)
+
 file(GLOB_RECURSE MODEL_CLUSTER_SOURCES models/clustering/*.cpp)
 file(GLOB_RECURSE MODEL_DECISION_TREE_SOURCES models/decision_tree/*.cpp)
 file(GLOB_RECURSE MODEL_NEURAL_NETWORK_SOURCES models/neural/*.cpp)
 
 # Create executable
 add_executable(ai_lab_demo
+
     ${APP_SOURCES}
     ${DATA_SOURCES}
     ${MODEL_LINEAR_SOURCES}
+
     ${MODEL_CLUSTER_SOURCES}
     ${MODEL_DECISION_TREE_SOURCES}
     ${MODEL_NEURAL_NETWORK_SOURCES}
