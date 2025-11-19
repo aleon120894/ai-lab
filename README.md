@@ -173,7 +173,7 @@ Epoch 4500 | Loss: 0.000190376
 | Multi-Linear Regression | Gradient Descent + MSE         | Regression        |
 | Logistic Regression     | Sigmoid + BCE Loss             | Classification    |
 | K-Means                 | Euclidean Distance Clustering  | Unsupervised      |
-| Decision Tree           | Classification model           | Classification    |
+| Decision Tree           | Gini/Entropy metrics           | Classification    |
 | Neural Network          | Backpropagation                | Classification    |
 
 All models are implemented using raw **C++** and **STL containers**, without external ML frameworks.
